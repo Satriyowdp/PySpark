@@ -1,0 +1,18 @@
+Script
+
+Inisialisasi SparkSession: SparkSession digunakan untuk membuat dan mengelola konteks Spark. Dalam hal ini, kita membuat sesi Spark dengan nama aplikasi "Airline Customer Analysis".
+
+Ekstraksi, Pembersihan, dan Transformasi Dataset: Data dari tiga file CSV ("calendar.csv", "customer_flight_activity.csv", dan "customer_loyalty_history.csv") dibaca ke dalam DataFrame Spark. DataFrame tersebut kemudian dibersihkan dari duplikat (pada DataFrame customer_loyalty_history_df).
+
+Penggunaan PySpark SQL: DataFrame yang telah dibaca dan dibersihkan diregistrasikan sebagai tampilan sementara (temporary views) dalam Spark untuk kemudian digunakan dalam query SQL Spark. Di sini, dilakukan join antara customer_loyalty_history dan customer_flight_activity untuk menganalisis data pelanggan.
+
+Analisis Data: Dengan menggunakan query SQL Spark, data dianalisis untuk menghitung total penerbangan, total jarak, total poin yang terakumulasi, total poin yang ditebus, dan total biaya dolar poin yang ditebus, dengan di-grupkan berdasarkan beberapa atribut seperti negara, provinsi, kota, gender, pendidikan, dll.
+
+Penyimpanan Hasil Analisis: Hasil analisis disimpan dalam format CSV.
+
+Visualisasi Data: DataFrame Spark diubah menjadi Pandas DataFrame agar bisa digunakan untuk visualisasi dengan Matplotlib. Tiga plot dibuat: (1) Total Penerbangan berdasarkan Status Kartu Loyalitas, (2) Total Poin yang Terakumulasi berdasarkan Tingkat Pendidikan, dan (3) Total Jarak berdasarkan Gender.
+
+Cara menjalankan kodenya adalah dengan menggunakan lingkungan yang mendukung Spark (bisa menggunakan VScode atau Google Colab) dan memastikan bahwa file CSV yang dibutuhkan ada pada path / direktori yang tepat.
+
+Analisa
+Analisis data yang dilakukan tentang perilaku pelanggan maskapai udara berdasarkan beberapa faktor seperti lokasi, gender, pendidikan, status kartu loyalitas, dll. Visualisasi yang yang saya buat membantu mengetahui total penerbangan berdasarkan loyalty card status, total point berdasarkan tingkat pendidikan, dan jarak penerbangan berdasarkan jenis kelamin.
